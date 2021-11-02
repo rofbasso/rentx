@@ -56,8 +56,6 @@ class CarsRepository implements ICarsRepository {
       .createQueryBuilder("c")
       .where("available = :available", { available: true });
 
-    console.log(name);
-
     if (brand) {
       carsQuery.andWhere("c.brand = :brand", { brand });
     }
