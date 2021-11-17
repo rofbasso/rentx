@@ -2,7 +2,7 @@ import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { User } from "../../infra/typeorm/entities/User";
 import { IUsersRepository } from "../IUsersRepository";
 
-class UserRepositoryInMemory implements IUsersRepository {
+class UsersRepositoryInMemory implements IUsersRepository {
   users: User[] = [];
 
   async create({
@@ -31,4 +31,4 @@ class UserRepositoryInMemory implements IUsersRepository {
   }
 }
 
-export { UserRepositoryInMemory };
+export { UsersRepositoryInMemory };
