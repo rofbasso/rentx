@@ -6,6 +6,8 @@ import swaggerUi from "swagger-ui-express";
 
 import "../../container";
 
+import cors from "cors";
+
 import upload from "../../../config/upload";
 import swaggerFile from "../../../swagger.json";
 import createConnection from "../typeorm";
@@ -22,6 +24,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use("/avatar", express.static(`${upload.tmpFolder}/avatar`));
 app.use("/cars", express.static(`${upload.tmpFolder}/cars`));
 
+app.use(cors());
 app.use(router);
 
 app.use(
